@@ -21,7 +21,7 @@ export async function fetchMovieById(movie_id) {
 }
 
 export async function fetchMovieBySearch(query) {
-  const response = await axios(`search/movie/`, {
+  const response = await axios(`search/movie`, {
     params: {
       api_key: KEY,
       query,
