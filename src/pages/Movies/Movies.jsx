@@ -1,8 +1,8 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams, useLocation, Outlet } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { fetchMovieBySearch } from 'services/moviesAPI';
-import { Loader } from 'components/Loader/Loader';
-import img from '../images/no_poster.jpg';
+import { Loader } from '../../components/Loader/Loader';
+import img from '../../images/no_poster.jpg';
 import {
   List,
   ListItem,
@@ -17,22 +17,21 @@ import {
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = useState('');
-  const query = searchParams.get('title');
   const location = useLocation();
 
   useEffect(() => {
+    const query = searchParams.get('title');
     if (query === null || query === '') return;
     const fetchMovies = async () => {
       try {
         const data = await fetchMovieBySearch(query);
         setMovies(data.results);
       } catch (error) {
-        setError(error.message);
+        console.log(error);
       }
     };
     fetchMovies();
-  }, [query, error]);
+  }, [searchParams]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -66,9 +65,6 @@ const Movies = () => {
                 </ListItem>
               ))}
             </List>
-          </Suspense>
-          <Suspense fallback={<Loader />}>
-            <Outlet />
           </Suspense>
         </>
       )}

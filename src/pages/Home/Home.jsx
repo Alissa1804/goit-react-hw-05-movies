@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { fetchTrendingMovies } from 'services/moviesAPI';
-import { Loader } from 'components/Loader/Loader';
-import img from '../images/no_poster.jpg';
+import { Loader } from '../../components/Loader/Loader';
+import img from '../../images/no_poster.jpg';
 import { Title, List, ListItem, Img, StyledLink, MTitle } from './Home.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -16,13 +15,13 @@ const Home = () => {
         const response = await fetchTrendingMovies();
         setMovies(response.results);
       } catch (error) {
-        setError(error.message);
+        console.log(error.message);
       } finally {
         setLoading(false);
       }
     };
     fetchMoviesHome();
-  }, [error]);
+  }, []);
 
   return (
     <>

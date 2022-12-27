@@ -30,6 +30,11 @@ export const ListItem = styled.li`
   border-radius: 5px;
   border: 2px solid #2af598;
   overflow: hidden;
+  object-fit: cover;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 export const Img = styled.img`

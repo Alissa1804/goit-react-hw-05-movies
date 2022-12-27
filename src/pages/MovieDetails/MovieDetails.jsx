@@ -1,8 +1,8 @@
 import { useFetchMovie } from 'hooks/useFetchMovie';
 import { Suspense } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { Loader } from 'components/Loader/Loader';
-import img from '../images/no_poster.jpg';
+import { Loader } from '../../components/Loader/Loader';
+import img from '../../images/no_poster.jpg';
 import {
   Button,
   Card,

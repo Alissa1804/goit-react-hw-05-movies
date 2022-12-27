@@ -4,7 +4,6 @@ import { fetchMovieById } from 'services/moviesAPI';
 
 export const useFetchMovie = () => {
   const [movie, setMovie] = useState(null);
-  const [error, setError] = useState('');
   const { movie_id } = useParams();
 
   useEffect(() => {
@@ -13,11 +12,11 @@ export const useFetchMovie = () => {
         const response = await fetchMovieById(movie_id);
         setMovie(response);
       } catch (error) {
-        setError(error.message);
+        console.log(error.message);
       }
     };
     fetchMovieId();
-  }, [movie_id, error]);
+  }, [movie_id]);
 
   return movie;
 };
