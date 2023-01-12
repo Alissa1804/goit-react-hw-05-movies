@@ -3,7 +3,9 @@ import { Navlink, NavList, Nav, Logo } from '../Navigation/Navigation';
 export const Navigation = () => {
   return (
     <Nav>
-      <Logo>Moviethek</Logo>
+      <Logo to="/" end>
+        Moviethek
+      </Logo>
       <NavList>
         <li>
           <Navlink to="/" end>

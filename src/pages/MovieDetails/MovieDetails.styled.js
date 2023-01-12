@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const Div = styled.div`
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Button = styled.button`
+  align-self: flex-start;
   background-color: #08aeea;
   background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
   border-radius: 5px;
@@ -25,7 +32,7 @@ export const Button = styled.button`
 
 export const Card = styled.div`
   display: flex;
-  width: 45%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   gap: 30px;
@@ -71,4 +78,9 @@ export const StyledLink = styled(Link)`
 export const GList = styled.ul`
   display: flex;
   gap: 5px;
+`;
+
+export const Circular = styled.div`
+  width: 60px;
+  height: 60px;
 `;

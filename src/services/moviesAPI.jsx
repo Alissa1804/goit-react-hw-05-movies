@@ -20,14 +20,17 @@ export async function fetchMovieById(movie_id) {
   return response.data;
 }
 
-export async function fetchMovieBySearch(query) {
+export async function fetchMovieBySearch(query, page) {
   const response = await axios(`search/movie`, {
     params: {
       api_key: KEY,
       query,
+      page,
     },
   });
-  return response.data;
+  if (response.data.results.length === 0) {
+    throw Error;
+  } else return response.data;
 }
 
 export async function fetchMovieCast(movie_id) {

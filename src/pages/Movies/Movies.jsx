@@ -3,6 +3,7 @@ import { useSearchParams, useLocation } from 'react-router-dom';
 import { fetchMovieBySearch } from 'services/moviesAPI';
 import { Loader } from '../../components/Loader/Loader';
 import img from '../../images/no_poster.jpg';
+import img2 from '../../images/noresults.jpg';
 import {
   List,
   ListItem,
@@ -12,10 +13,13 @@ import {
   Input,
   Button,
   Form,
+  Loadmore,
 } from './Movies.styled';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState('');
+  const [page, setPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
 
@@ -24,20 +28,27 @@ const Movies = () => {
     if (query === null || query === '') return;
     const fetchMovies = async () => {
       try {
-        const data = await fetchMovieBySearch(query);
-        setMovies(data.results);
+        const data = await fetchMovieBySearch(query, page);
+        const movies = data.results;
+        setMovies(prevMovies => [...prevMovies, ...movies]);
       } catch (error) {
-        console.log(error);
+        setError(error);
       }
     };
     fetchMovies();
-  }, [searchParams]);
+  }, [searchParams, page]);
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
     setSearchParams({ title: form.elements.query.value.trim() });
     form.reset();
+    setMovies([]);
+    setError('');
+  };
+
+  const picturesLoading = () => {
+    setPage(prevPage => prevPage + 1);
   };
 
   return (
@@ -46,6 +57,7 @@ const Movies = () => {
         <Input type="text" name="query" placeholder="Search movies" />
         <Button>Search</Button>
       </Form>
+      {error && <img src={img2} width="550" alt="No results" />}
       {movies && (
         <>
           <Suspense fallback={<Loader />}>
@@ -65,6 +77,9 @@ const Movies = () => {
                 </ListItem>
               ))}
             </List>
+            {movies.length > 0 && movies.length % 20 === 0 && (
+              <Loadmore onClick={picturesLoading}>Load more</Loadmore>
+            )}
           </Suspense>
         </>
       )}

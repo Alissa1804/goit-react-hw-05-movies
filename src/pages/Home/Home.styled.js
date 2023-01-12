@@ -26,6 +26,7 @@ export const StyledLink = styled(Link)`
 
 export const MTitle = styled.h3`
   padding: 8px;
+  color: #2af598;
 `;
 
 export const ListItem = styled.li`

@@ -7,8 +7,9 @@ export const Nav = styled.nav`
   justify-content: center;
   gap: 30px;
 `;
-export const Logo = styled.h1`
+export const Logo = styled(NavLink)`
   color: #fff;
+  font-size: 30px;
   font-family: Pacifico;
 `;
 

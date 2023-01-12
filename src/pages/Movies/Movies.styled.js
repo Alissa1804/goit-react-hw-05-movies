@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const List = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  width: 90vw;
+  width: 95vw;
   margin-left: auto;
   margin-right: auto;
   gap: 20px;
@@ -20,11 +20,12 @@ export const StyledLink = styled(Link)`
 
 export const MTitle = styled.h3`
   padding: 8px;
+  color: #2af598;
 `;
 
 export const ListItem = styled.li`
   display: flex;
-  width: 18%;
+  width: 9%;
   background-color: #212121;
   padding-bottom: 5px;
   border-radius: 5px;
@@ -89,4 +90,25 @@ export const Input = styled.input`
 export const Form = styled.form`
   display: flex;
   gap: 5px;
+`;
+
+export const Loadmore = styled.button`
+  background-color: #08aeea;
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+  border-radius: 5px;
+  font-family: Dosis;
+  min-width: 85px;
+  height: 40px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  font-size: 24px;
+  border: 2px solid #212121;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    border: 2px solid #fff;
+  }
 `;

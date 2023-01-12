@@ -6,6 +6,10 @@ html {
   overflow-x: hidden;
 }
 
+header {
+  z-index: 1000;
+}
+
 *,
 *::before,
 *::after {
