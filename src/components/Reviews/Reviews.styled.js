@@ -24,6 +24,7 @@ export const ListItem = styled.li`
   color: #fff;
   border-radius: 5px;
   padding: 20px;
+  overflow: hidden;
 `;
 
 export const A = styled.h3`
