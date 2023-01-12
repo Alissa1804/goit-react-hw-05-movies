@@ -43,9 +43,10 @@ export const Card = styled.div`
   margin-left: auto;
   margin-right: auto;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    margin-bottom: 30px;
   }
 `;
 export const Info = styled.div`
