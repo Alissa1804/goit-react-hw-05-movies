@@ -19,17 +19,22 @@ export const Button = styled.button`
   background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
   border-radius: 5px;
   font-family: Dosis;
-  min-width: 85px;
-  height: 40px;
+  min-width: 65px;
+  height: 35px;
   padding: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #212121;
-  font-size: 24px;
+  font-size: 22px;
   border: 2px solid #212121;
   cursor: pointer;
   margin-bottom: 15px;
+  @media screen and (min-width: 420px) {
+    min-width: 85px;
+    height: 40px;
+    font-size: 24px;
+  }
   &:hover {
     color: #fff;
     border: 2px solid #fff;
@@ -43,7 +48,7 @@ export const Card = styled.div`
   margin-left: auto;
   margin-right: auto;
   gap: 30px;
-  margin-bottom: 10px;
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     margin-bottom: 30px;

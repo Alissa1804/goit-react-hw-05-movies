@@ -4,8 +4,9 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: 18px;
-  width: 85%;
+  font-size: 17px;
+  width: 80%;
+  margin-top: -18px;
 
   @media screen and (min-width: 768px) {
     width: 70%;
@@ -27,4 +28,10 @@ export const ListItem = styled.li`
 
 export const A = styled.h3`
   color: #08aeea;
+`;
+
+export const P = styled.p`
+  margin-top: -20px;
+  font-size: 18px;
+  color: #252525;
 `;

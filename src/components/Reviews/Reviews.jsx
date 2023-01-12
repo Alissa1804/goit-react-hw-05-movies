@@ -1,5 +1,5 @@
 import { useFetchMovieReviews } from 'hooks/useFetchMovieReviews';
-import { List, ListItem, A } from './Reviews.styled';
+import { List, ListItem, A, P } from './Reviews.styled';
 
 const Reviews = () => {
   const reviews = useFetchMovieReviews();
@@ -16,7 +16,7 @@ const Reviews = () => {
           ))}
         </List>
       ) : (
-        <p>We don't have any reviews for this Movie</p>
+        <P>We don't have any reviews for this Movie</P>
       )}
     </>
   );
