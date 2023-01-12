@@ -4,8 +4,12 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 80%;
-  gap: 15px;
+  width: 90%;
+  gap: 8px;
+  @media screen and (min-width: 768px) {
+    gap: 15px;
+    width: 80%;
+  }
 `;
 
 export const ListItem = styled.li`
@@ -15,7 +19,13 @@ export const ListItem = styled.li`
   border-radius: 5px;
   border: 2px solid #2af598;
   overflow: hidden;
-  width: 13%;
+  width: 48%;
+  @media screen and (min-width: 420px) {
+    width: 18%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 13%;
+  }
 `;
 export const Img = styled.img`
   display: block;

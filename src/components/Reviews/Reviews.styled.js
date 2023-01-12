@@ -5,7 +5,14 @@ export const List = styled.ul`
   flex-direction: column;
   gap: 15px;
   font-size: 18px;
-  width: 45%;
+  width: 85%;
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 45%;
+  }
 `;
 
 export const ListItem = styled.li`

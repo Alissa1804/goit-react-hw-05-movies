@@ -2,9 +2,15 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Div = styled.div`
-  width: 45%;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  @media screen and (min-width: 320px) {
+    width: 95%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 45%;
+  }
 `;
 
 export const Button = styled.button`
@@ -33,22 +39,38 @@ export const Button = styled.button`
 export const Card = styled.div`
   display: flex;
   width: 100%;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   gap: 30px;
   margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
   color: #212121;
-  font-size: 20px;
+  font-size: 16px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 22px;
+  }
 `;
 
 export const Img = styled.img`
-  min-width: 35%;
+  min-width: 100%;
   border-radius: 5px;
+  @media screen and (min-width: 420px) {
+    min-width: 35%;
+  }
+  @media screen and (min-width: 1200px) {
+    min-width: 50%;
+  }
 `;
 
 export const Box = styled.div`
@@ -77,7 +99,11 @@ export const StyledLink = styled(Link)`
 
 export const GList = styled.ul`
   display: flex;
+  flex-direction: column;
   gap: 5px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const Circular = styled.div`

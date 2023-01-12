@@ -5,10 +5,18 @@ export const List = styled.ul`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 95vw;
+  width: 93vw;
   margin-left: auto;
   margin-right: auto;
-  gap: 20px;
+  gap: 10px;
+  @media screen and (min-width: 768px) {
+    gap: 17px;
+    width: 90vw;
+  }
+  @media screen and (min-width: 1200px) {
+    gap: 20px;
+    width: 98vw;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -21,17 +29,27 @@ export const StyledLink = styled(Link)`
 export const MTitle = styled.h3`
   padding: 8px;
   color: #2af598;
+  font-size: 14px;
 `;
 
 export const ListItem = styled.li`
   display: flex;
-  width: 9%;
   background-color: #212121;
   padding-bottom: 5px;
   border-radius: 5px;
   border: 2px solid #2af598;
   overflow: hidden;
   object-fit: cover;
+  width: 48%;
+  @media screen and (min-width: 768px) {
+    width: 31%;
+  }
+  @media screen and (min-width: 980px) {
+    width: 18%;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 9%;
+  }
   transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     transform: scale(1.03);
