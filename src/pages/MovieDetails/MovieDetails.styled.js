@@ -63,7 +63,7 @@ export const Info = styled.div`
 `;
 
 export const Img = styled.img`
-  min-width: 100%;
+  min-width: 50%;
   border-radius: 5px;
   @media screen and (min-width: 420px) {
     min-width: 35%;
